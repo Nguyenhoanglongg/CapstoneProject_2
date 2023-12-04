@@ -9,7 +9,7 @@ use App\Models\AdminSettings;
 
 class ForgotPasswordController extends Controller
 {
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
     |--------------------------------------------------------------------------
@@ -20,30 +20,29 @@ class ForgotPasswordController extends Controller
     |
     */
 
-    use SendsPasswordResetEmails;
+  use SendsPasswordResetEmails;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    $this->middleware('guest');
+  }
 
-    protected function validateEmail(Request $request)
-    {
-        $settings = AdminSettings::first();
-        $request['_captcha'] = $settings->captcha;
+  protected function validateEmail(Request $request)
+  {
+    $settings = AdminSettings::first();
 
-      $messages = [
-        'g-recaptcha-response.required_if' => trans('admin.captcha_error_required'),
-        'g-recaptcha-response.captcha' => trans('admin.captcha_error'),
-      ];
-      $this->validate($request, [
-        'email' => 'required|email',
-        'g-recaptcha-response' => 'required_if:_captcha,==,on|captcha'
-      ], $messages);
-    }
+    $messages = [
+      'g-recaptcha-response.required_if' => trans('admin.captcha_error_required'),
+      'g-recaptcha-response.captcha' => trans('admin.captcha_error'),
+    ];
+    $this->validate($request, [
+      'email' => 'required|email',
+      'g-recaptcha-response' => 'required_if:_captcha,==,on|captcha'
+    ], $messages);
+  }
 }
