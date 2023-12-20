@@ -12,11 +12,12 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+    'without_spaces' => 'The :attribute not allow whitespace',
+    'not_regex'             => 'Not use special character',
     'accepted'             => 'The :attribute must be accepted.',
     'active_url'           => 'The :attribute is not a valid URL.',
     'after'                => 'The :attribute must be a date after :date.',
-    'alpha'                => 'The :attribute may only contain letters.',
+    'alpha'                => 'The :attribute only letters.',
     'alpha_dash'           => 'The :attribute may only contain letters, numbers, and dashes.',
     "ascii_only"           => "The :attribute may only contain letters, numbers, and dashes.",
     'alpha_num'            => 'The :attribute may only contain letters and numbers.',
@@ -84,7 +85,7 @@ return [
     'url'                  => 'The :attribute format is invalid.',
     "letters"              => "The username must contain at least one letter or number",
     "account_not_confirmed" => "Your account is not confirmed, please check your email",
-	"user_suspended"        => "Your account has been suspended, please contact us if an error",
+    "user_suspended"        => "Your account has been suspended, please contact us if an error",
 
     /*
     |--------------------------------------------------------------------------
@@ -115,7 +116,7 @@ return [
     */
 
     'attributes' => [
-      'agree_gdpr' => 'box I agree with the processing of personal data',
+        'agree_gdpr' => 'box I agree with the processing of personal data',
     ],
 
 ];

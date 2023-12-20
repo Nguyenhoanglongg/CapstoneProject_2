@@ -16,7 +16,7 @@ return [
     'slider_2_subtitle' => 'We Need You !',
 
     'slider_3_title' => 'Educating the future',
-    'slider_3_subtitle' => 'With a small contribution you can help educate hundreds of children.',
+    'slider_3_subtitle' => 'We Need You !',
 
 
 
